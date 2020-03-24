@@ -8,10 +8,10 @@
 function averageMark(a, g, p) {
 	
 	let algebra = a;
-	let geography = b;
+	let geography = g;
 	let physics = p;
     
-	return (a + b + p) / 3;
+	return (a + g + p) / 3;
 }
 
 function sayHello(userName) {
