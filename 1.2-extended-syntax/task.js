@@ -2,7 +2,7 @@
 function getResult(a,b,c) {
   let d, x = [];
   d = b ** 2 - 4 * a * c;
-  if (d = 0) {
+  if (d === 0) {
    x = x.push(- b / 2 * a);
      }
   else if (d > 0) {
