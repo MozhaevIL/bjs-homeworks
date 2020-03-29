@@ -13,7 +13,7 @@ function getResult(a,b,c) {
 }
 
 function getAverageMark(marks){
-  let marksSum, averageMark;  
+  let marksSum = 0, averageMark;  
   if (marks.lenght === 0) {
     averageMark = 0;
   }
