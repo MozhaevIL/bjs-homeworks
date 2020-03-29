@@ -18,7 +18,7 @@ function getAverageMark(marks) {
     averageMark = 0;
     console.log("Оценок не найдено");
   }
-  else if (marks.lenght > 5) {
+  else if (marks.length > 5) {
     marks = marks.slice(0,5);
     console.log("Более 5 оценок. Определено среднее для первых 5");
     for (let i = 0; i < marks.length; i++) {
