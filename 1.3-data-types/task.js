@@ -1,7 +1,7 @@
 "use strict"
 function calculateTotalMortgage(percent, contribution, amount, date) {
 
- let months = Math.round((date.getTime() - new Date().getTime()) / (1000 * 3600 * 24 * 30));
+ let months = Math.floor((date.getTime() - new Date().getTime()) / (1000 * 3600 * 24 * 30));
 
   if (isNaN(percent) === true) {
      alert(`Параметр "процентная ставка" содержит неправильное значение ${percent}`);
