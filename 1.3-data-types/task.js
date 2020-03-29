@@ -1,7 +1,7 @@
 "use strict"
 function calculateTotalMortgage(percent, contribution, amount, date) {
 
- let month;
+ let month = Math.round((date.getTime() - new Date().getTime()) / (1000 * 3600 * 24 * 30));;
 
   if (isNaN(percent) === true) {
      alert(`Параметр "процентная ставка" содержит неправильное значение ${percent}`);
@@ -20,10 +20,6 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
      } else {
      amount = Number(amount);
     }
-
-
-months = Math.round((date.getTime() - new Date().getTime()) / (1000 * 3600 * 24 * 30));
-
 
  let credit = amount - contribution;
  let monthlyPercentDecimal = percent / (100 * 12);
