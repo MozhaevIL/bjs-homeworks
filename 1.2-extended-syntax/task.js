@@ -12,20 +12,22 @@ function getResult(a,b,c) {
    return x;
 }
 
-function getAverageMark(marks){
+function getAverageMark(marks) {
   let marksSum = 0, averageMark;  
-  if (marks.lenght === 0) {
+  if (marks.length === 0) {
     averageMark = 0;
+    console.log("Оценок не найдено");
   }
   else if (marks.lenght > 5) {
     marks = marks.slice(0,5);
-    for (let i = 0; i < marks.lenght; i++) {
+    console.log("Более 5 оценок. Определено среднее для первых 5");
+    for (let i = 0; i < marks.length; i++) {
       marksSum += marks[i];
     }
     averageMark = marksSum / marks.length;
   }
   else {
-    for (let i = 0; i < marks.lenght; i++) {
+    for (let i = 0; i < marks.length; i++) {
       marksSum += marks[i];   
     }
     averageMark = marksSum / marks.length;
