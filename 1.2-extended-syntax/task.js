@@ -43,4 +43,5 @@ function askDrink(name,dateOfBirthday) {
   } else {
     message = `Не желаете ли олд-фэшн, ${name}?`;
   }
+  return message;
 }
