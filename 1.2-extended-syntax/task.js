@@ -13,8 +13,25 @@ function getResult(a,b,c) {
 }
 
 function getAverageMark(marks){
-    // код для задачи №2 писать здесь
-    // return averageMark;
+  let marksSum, averageMark;  
+  if (marks.lenght === 0) {
+    averageMark = 0;
+  }
+  else if (marks.lenght > 5) {
+    marks = marks.slice(0,5);
+    for (let i = 0; i < marks.lenght; i++) {
+      marksSum += marks[i];
+    }
+    averageMark = marksSum / marks.length;
+  }
+  else {
+    for (let i = 0; i < marks.lenght; i++) {
+      marksSum += marks[i];   
+    }
+    averageMark = marksSum / marks.length;
+  }
+  
+ return averageMark;
 }
 
 function askDrink(name,dateOfBirthday){
