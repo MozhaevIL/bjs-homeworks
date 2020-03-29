@@ -6,8 +6,8 @@ function getResult(a,b,c) {
    x[0] = - b / 2 * a;
      }
   else if (d > 0) {
-    x[0] = (-b - d ** 0.5) / 2 * a;
-    x[1] = (-b + d ** 0.5) / 2 * a;
+    x[0] = (-b + d ** 0.5) / 2 * a;
+    x[1] = (-b - d ** 0.5) / 2 * a;
    }   
    return x;
 }
