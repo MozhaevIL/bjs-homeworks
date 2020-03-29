@@ -21,11 +21,9 @@ function calculateTotalMortgage(percent, contribution, amount, date) {
      amount = Number(amount);
     }
 
-    if (isNaN(date) === true) {
-     alert(`Параметр "срок ипотеки" содержит неправильное значение ${date}`);
-     } else {
-     months = Math.round((date.getTime() - new Date().getTime()) / (1000 * 3600 * 24 * 30));
-    }
+
+months = Math.round((date.getTime() - new Date().getTime()) / (1000 * 3600 * 24 * 30));
+
 
  let credit = amount - contribution;
  let monthlyPercentDecimal = percent / (100 * 12);
