@@ -22,12 +22,13 @@ function getAverageMark(marks) {
   else if (marks.length > 5) {
     marks = marks.slice(0,5);
     console.log("Более 5 оценок. Определено среднее для первых 5");
+  }
 
  for (let i = 0; i < marks.length; i++) {
      marksSum += marks[i];   
   }
   averageMark = marksSum / marks.length;
-  }
+
   
  return averageMark;
 }
