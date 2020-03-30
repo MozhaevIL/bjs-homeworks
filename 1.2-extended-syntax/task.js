@@ -18,6 +18,7 @@ function getAverageMark(marks) {
   if (marks.length === 0) {
     averageMark = 0;
     console.log("Оценок не найдено");
+    return averageMark;
   }
   else if (marks.length > 5) {
     marks = marks.slice(0,5);
@@ -28,7 +29,6 @@ function getAverageMark(marks) {
      marksSum += marks[i];   
   }
   averageMark = marksSum / marks.length;
-
   
  return averageMark;
 }
