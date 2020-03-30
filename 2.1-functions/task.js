@@ -7,7 +7,7 @@ function getSolutions(a,b,c) {
      "D": d,
      roots: []
     };
-  } else if (d = 0) {
+  } else if (d === 0) {
      let x1 = - b / (2 * a);
      return {
       "D": d,
@@ -26,12 +26,12 @@ function getSolutions(a,b,c) {
 function showSolutionsMessage(a,b,c) {
     let result = getSolutions(a,b,c);
     alert(`Вычисляем корни квадратного уравнения ${a}x² + ${b}x + ${c}`);
-    alert(`Значение дискриминанта: ${result["D"].toFixed(2)}`);
+    alert(`Значение дискриминанта: ${result["D"]}`);
     if (result["D"] < 0) {
         alert("Уравнение не имеет вещественных корней");
     } else if (result["D"] = 0) {
-        alert(`Уравнение имеет один корень X₁ = ${result.roots[0].toFixed(2)}`);
+        alert(`Уравнение имеет один корень X₁ = ${result.roots[0]}`);
     } else {
-        alert(`Уравнение имеет два корня. X₁ = ${result.roots[0].toFixed(2)}, X₂ = ${result.roots[1].toFixed(2)}`);
+        alert(`Уравнение имеет два корня. X₁ = ${result.roots[0]}, X₂ = ${result.roots[1]}`);
     }
 }
