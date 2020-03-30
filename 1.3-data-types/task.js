@@ -34,7 +34,7 @@ function getGreeting(name) {
   if (name === "" || typeof name !== "string") {
     name = "Аноним";
   }
-  let message = `Привет, мир! Меня зовут ${name}.`;
+  let message = `Привет, мир! Меня зовут ${name}`;
   console.log(message);
   return message;
 }
