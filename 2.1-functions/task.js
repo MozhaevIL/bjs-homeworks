@@ -63,3 +63,21 @@ function getAverageMark(marks) {
      averageMark = marksSum / marks.length;
      return averageMark;
 }
+
+//задача 3
+function getPersonData(secretData) {
+   let uncodedData = new Object;
+   uncodedData.firstName = getDecodedValue(secretData.aaa);
+   uncodedData.lastName = getDecodedValue(secretData.bbb);
+   return uncodedData;
+}
+
+function getDecodedValue(secret) {
+   if (secret === 0) {
+       return "Родриго";
+   } else if (secret === 1) {
+       return "Эмильо";
+    } else {
+        return "Неизвестное значение";
+    }
+}
