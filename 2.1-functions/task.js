@@ -51,7 +51,12 @@ function getAverageScore(data) {
 
 
 function getAverageMark(marks) {
-    let marksSum = 0, averageMark;              
+    let marksSum = 0, averageMark;
+    if (marks === 0) {
+        averageMark = 0;
+        console.log('Средняя оценка по предмету - 0');
+        return averageMark;
+    }           
     for (let i = 0; i < marks.length; i++) {
         marksSum += marks[i];   
      }
