@@ -1,5 +1,5 @@
 'use strict'
-
+//задача 1
 function getSolutions(a,b,c) {
   let d = b ** 2 - 4 * a* c;
   if (d < 0) {
@@ -34,4 +34,27 @@ function showSolutionsMessage(a,b,c) {
     } else {
         alert(`Уравнение имеет два корня. X₁ = ${result.roots[0]}, X₂ = ${result.roots[1]}`);
     }
+}
+
+//Задача 2
+function getAverageScore(data) {
+    let averageScore = new Object, averageMarks = [];
+    
+    for (let prop in data) {
+        let marks = data[prop];
+        averageScore[prop] =  getAverageMark(marks);
+        averageMarks.push(averageScore[prop]);
+    }
+    averageScore.average = getAverageMark(averageMarks);
+   return averageScore;
+}
+
+
+function getAverageMark(marks) {
+    let marksSum = 0, averageMark;              
+    for (let i = 0; i < marks.length; i++) {
+        marksSum += marks[i];   
+     }
+     averageMark = marksSum / marks.length;
+     return averageMark;
 }
