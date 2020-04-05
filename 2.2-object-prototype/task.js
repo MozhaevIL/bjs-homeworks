@@ -11,7 +11,12 @@ function getAnimalSound(animal) {
 
 function getAverageMark(marks) {
     let marksSum = 0, average, roundedAverage;  
-
+    
+    if (marks.length === 0) {
+        console.log("Оценок не найдено");
+        return 0;
+      }
+  
    for (let i = 0; i < marks.length; i++) {
        marksSum += marks[i];   
     }
