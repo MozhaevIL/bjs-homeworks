@@ -29,6 +29,7 @@ function getAverageMark(marks) {
 
 function checkBirthday(birthday) {
     let now = Date.now(),
+    birthdayDate = newDate(birthday),
     birthdayMs = birthday.getTime(),
     diff = now - birthdayMs,
     age = diff / (1000 * 3600 * 24 * 365.25),
