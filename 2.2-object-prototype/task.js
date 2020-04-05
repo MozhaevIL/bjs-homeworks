@@ -2,7 +2,7 @@ function getAnimalSound(animal) {
     if(Object.keys(animal).length === 0) {
         return null;
     } else {
-        let sound = this.sound;
+        let sound = animal.sound;
         return sound;
     }
 }
