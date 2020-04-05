@@ -1,3 +1,5 @@
+'use strict'
+
 function getAnimalSound(animal) {
     if(animal) {
         let sound = animal.sound;
@@ -8,8 +10,16 @@ function getAnimalSound(animal) {
 }
 
 function getAverageMark(marks) {
-    // код для задачи №2 писать здесь
-    // return averageMark
+    let marksSum = 0, average, roundedAverage;  
+
+   for (let i = 0; i < marks.length; i++) {
+       marksSum += marks[i];   
+    }
+    average = marksSum / marks.length;
+    roundedAverage = math.round(average);
+    
+   return roundedAverage;
+  
 }
 
 function checkBirthday(birthday) {
