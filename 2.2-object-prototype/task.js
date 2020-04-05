@@ -16,7 +16,7 @@ function getAverageMark(marks) {
        marksSum += marks[i];   
     }
     average = marksSum / marks.length;
-    roundedAverage = math.round(average);
+    roundedAverage = Math.round(average);
     
    return roundedAverage;
   
