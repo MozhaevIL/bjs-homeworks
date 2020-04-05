@@ -10,7 +10,7 @@ function getAnimalSound(animal) {
 }
 
 function getAverageMark(marks) {
-    let marksSum = 0, average, roundedAverage;  
+    let marksSum = 0, marksInt = [], average, roundedAverage;  
     
     if (marks.length === 0) {
         console.log("Оценок не найдено");
@@ -18,13 +18,13 @@ function getAverageMark(marks) {
       }
   
    for (let i = 0; i < marks.length; i++) {
-       marksSum += marks[i];   
+       marksInt[i] = parseInt(marks[i]);
+       marksSum += marksInt[i];   
     }
     average = marksSum / marks.length;
     roundedAverage = Math.round(average);
     
    return roundedAverage;
-  
 }
 
 function checkBirthday(birthday) {
