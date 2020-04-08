@@ -1,5 +1,5 @@
 //Задача 1
-class weapon {
+class Weapon {
     constructor(name, attack, durability, range) {
         this.name = name;
         this.attack = attack;
@@ -41,12 +41,12 @@ class weapon {
     }
 }
 
-const arm = new weapon("Рука", 1, Infinity, 1);
-const bow = new weapon("Лук", 10, 200, 3);
-const sword = new weapon("Меч", 25, 500, 1);
-const staff = new weapon("Посох", 8, 300, 2);
-const knife = new weapon("Нож", 5, 300, 1);
+const arm = new Weapon("Рука", 1, Infinity, 1);
+const bow = new Weapon("Лук", 10, 200, 3);
+const sword = new Weapon("Меч", 25, 500, 1);
+const staff = new Weapon("Посох", 8, 300, 2);
+const knife = new Weapon("Нож", 5, 300, 1);
 
-const longbow = new weapon("Длинный лук", 15, 200, 4);
-const poleaxe = new weapon("Секира", 27, 500, 1);
-const stormStaff = new weapon("Посох бури", 10, 300, 3);
+const longbow = new Weapon("Длинный лук", 15, 200, 4);
+const poleaxe = new Weapon("Секира", 27, 500, 1);
+const stormStaff = new Weapon("Посох бури", 10, 300, 3);
