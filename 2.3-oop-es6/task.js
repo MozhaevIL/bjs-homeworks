@@ -100,7 +100,46 @@ const stormStaff = new Weapon({
 
 
 //Задача 2
-class Arm extends Weapon {
+
+class Weapon_2 {
+
+    
+    isBroken() {
+        if (this.durability > 0) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    takeDamage(damage) {
+        if (this.durability > damage) {
+            this.durability -= damage;
+            console.log(`Прочность оружия ${this.name} снижена на ${damage}. Новая прочность - ${this.durability}`);
+          
+        } else {
+            console.log(`Оружие ${this.name} сломалось, получив урон ${damage} при прочности ${this.durability}`);
+            this.durability = 0;
+        }
+      return this.durability;
+    }
+
+    getDamage() {
+        if (this.durability >= this.initialDurability * 0.3) {
+            console.log(`Оружие ${this.name} в превосходном состоянии наносит урон ${this.attack}`);
+            return this.attack;
+        } else if ((this.durability < this.initialDurability * 0.3) && (this.durability > 0)) {
+            console.log(`Оружие ${this.name} в плохом состоянии наносит урон ${this.attack / 2}`);
+            return this.attack / 2;
+        } else {
+            console.log(`Оружие ${this.name} сломано и не наносит урона`);
+            return 0;
+        }
+    }
+}
+
+
+class Arm extends Weapon_2 {
     constructor() {
         super();
         this.name = "Рука";
@@ -111,7 +150,7 @@ class Arm extends Weapon {
     }
 }
 
-class Bow extends Weapon {
+class Bow extends Weapon_2 {
     constructor() {
         super();
         this.name = "Лук";
@@ -122,7 +161,7 @@ class Bow extends Weapon {
     }
 }
 
-class Sword extends Weapon {
+class Sword extends Weapon_2 {
     constructor() {
         super();
         this.name = "Меч";
@@ -133,7 +172,7 @@ class Sword extends Weapon {
     }
 }
 
-class Staff extends Weapon {
+class Staff extends Weapon_2 {
     constructor() {
         super();
         this.name = "Посох";
@@ -144,7 +183,7 @@ class Staff extends Weapon {
     }
 }
 
-class Knife extends Weapon {
+class Knife extends Weapon_2 {
     constructor() {
         super();
         this.name = "Нож";
