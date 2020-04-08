@@ -101,10 +101,8 @@ const stormStaff = new Weapon({
 
 //Задача 2
 
-class Weapon_2 {
-
-    
-    isBroken() {
+class Weapon_2 {  //пришлось создать новый класс, т.к. класс Weapon принимает в качестве аргумента объект. Если это можно как-то обойти, буду рад
+     isBroken() {
         if (this.durability > 0) {
             return false;
         } else {
@@ -219,5 +217,61 @@ class StormStaff extends Staff {
         this.name = "Посох Бури";
         this.attack = 10;
         this.range = 3;
+    }
+}
+
+//задача 3
+class StudentLog {
+    constructor(name) {
+        this.name = name;
+        this.marks = {};
+    }
+
+    getName() {
+        return this.name;
+    }
+
+    addGrade(grade, subject) {
+              
+        if(this.marks.hasOwnProperty(subject) === false) {
+            this.marks[subject] = [];
+        };
+        if ((Number.isInteger(grade) === false) || (grade > 5 ) || (grade < 1)) {
+            console.log(`Недопустимая оценка "${grade}". Поставьте оценку от 1 до 5`);
+            return this.marks[subject].length;
+        }
+        this.marks[subject].push(grade);
+        return this.marks[subject].length;
+    }
+
+    getAverageBySubject(subject) {
+        let marksSum = 0, averageMark;
+        if ((this.marks.hasOwnProperty(subject) === false) ||(this.marks[subject].length === 0)) {
+          averageMark = 0;
+          console.log(`По предмету ${subject} нет оценок`);
+          return averageMark;
+        }
+
+        for (let i = 0; i < this.marks[subject].length; i++) {
+        marksSum += this.marks[subject][i];   
+         }
+         averageMark = marksSum / this.marks[subject].length;
+         console.log(`Средняя оценка по предмету ${subject} - ${averageMark}`);
+         return averageMark;
+    }
+
+    getTotalAverage() {
+        let totalMarksSum = 0, subjectNumber = 0, totalAverageScore;
+        for (let prop in this.marks ) {
+          totalMarksSum += this.getAverageBySubject(prop);
+          subjectNumber ++;
+        }
+        totalAverageScore = totalMarksSum / subjectNumber;
+        if (totalMarksSum === 0) {
+            console.log(`Оценок не найдено`);
+            return totalAverageScore = 0;
+        }
+        console.log(`Средняя оценка по всем предметам - ${totalAverageScore}`);
+        return totalAverageScore;
     }
 }
