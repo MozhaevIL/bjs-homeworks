@@ -194,7 +194,7 @@ class Knife extends Weapon_2 {
     }
 }
 
-class Longbow extends Bow {
+class LongBow extends Bow {
     constructor() {
         super();
         this.name = "Длинный лук";
