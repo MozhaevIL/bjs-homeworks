@@ -54,8 +54,9 @@ const stormStaff = new Weapon("Посох бури", 10, 300, 3);
 
 //Задача 2
 class Arm extends Weapon {
-    constructor(name) {
-        super(name);
+    constructor() {
+        super();
+        this.name = "Рука";
         this.attack = 1;
         this.durability = Infinity;
         this.currentDurability = this.durability;
@@ -64,8 +65,9 @@ class Arm extends Weapon {
 }
 
 class Bow extends Weapon {
-    constructor(name) {
-        super(name);
+    constructor() {
+        super();
+        this.name = "Лук";
         this.attack = 10;
         this.durability = 200;
         this.currentDurability = this.durability;
@@ -74,8 +76,9 @@ class Bow extends Weapon {
 }
 
 class Sword extends Weapon {
-    constructor(name) {
-        super(name);
+    constructor() {
+        super();
+        this.name = "Меч";
         this.attack = 25;
         this.durability = 500;
         this.currentDurability = this.durability;
@@ -84,8 +87,9 @@ class Sword extends Weapon {
 }
 
 class Staff extends Weapon {
-    constructor(name) {
-        super(name);
+    constructor() {
+        super();
+        this.name = "Посох";
         this.attack = 8;
         this.durability = 300;
         this.currentDurability = this.durability;
@@ -94,8 +98,9 @@ class Staff extends Weapon {
 }
 
 class Knife extends Weapon {
-    constructor(name) {
-        super(name);
+    constructor() {
+        super();
+        this.name = "Нож";
         this.attack = 5;
         this.durability = 300;
         this.currentDurability = this.durability;
@@ -104,24 +109,27 @@ class Knife extends Weapon {
 }
 
 class Longbow extends Bow {
-    constructor(name) {
-        super(name);
+    constructor() {
+        super();
+        this.name = "Длинный лук";
         this.attack = 15;
         this.range = 4;
     }
 }
 
 class Axe extends Sword {
-    constructor(name) {
-        super(name);
+    constructor() {
+        super();
+        this.name = "Секира";
         this.attack = 27;
         this.durability = 800;
     }
 }
 
 class StormStaff extends Staff {
-    constructor(name) {
-        super(name);
+    constructor() {
+        super();
+        this.name = "Посох Бури";
         this.attack = 10;
         this.range = 3;
     }
