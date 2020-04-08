@@ -17,14 +17,15 @@ class Weapon {
     }
 
     takeDamage(damage) {
-        if (this.currentDurability > damage) {this.currentDurability -= damage;
-          console.log(`Прочность оружия ${this.name} снижена на ${damage}. Новая прочность - ${this.currentDurability}`);
-          return this.currentDurability;
+        if (this.currentDurability > damage) {
+            this.currentDurability -= damage;
+            console.log(`Прочность оружия ${this.name} снижена на ${damage}. Новая прочность - ${this.currentDurability}`);
+          
         } else {
             console.log(`Оружие ${this.name} сломалось, получив урон ${damage} при прочности ${this.currentDurability}`);
-            return 0;
+            this.currentDurability = 0;
         }
-
+      return this.currentDurability;
     }
 
     getDamage() {
@@ -48,5 +49,80 @@ const staff = new Weapon("Посох", 8, 300, 2);
 const knife = new Weapon("Нож", 5, 300, 1);
 
 const longbow = new Weapon("Длинный лук", 15, 200, 4);
-const poleaxe = new Weapon("Секира", 27, 500, 1);
+const axe = new Weapon("Секира", 27, 500, 1);
 const stormStaff = new Weapon("Посох бури", 10, 300, 3);
+
+//Задача 2
+class Arm extends Weapon {
+    constructor(name) {
+        super(name);
+        this.attack = 1;
+        this.durability = Infinity;
+        this.currentDurability = this.durability;
+        this.range = 1;
+    }
+}
+
+class Bow extends Weapon {
+    constructor(name) {
+        super(name);
+        this.attack = 10;
+        this.durability = 200;
+        this.currentDurability = this.durability;
+        this.range = 3;
+    }
+}
+
+class Sword extends Weapon {
+    constructor(name) {
+        super(name);
+        this.attack = 25;
+        this.durability = 500;
+        this.currentDurability = this.durability;
+        this.range = 1;
+    }
+}
+
+class Staff extends Weapon {
+    constructor(name) {
+        super(name);
+        this.attack = 8;
+        this.durability = 300;
+        this.currentDurability = this.durability;
+        this.range = 2;
+    }
+}
+
+class Knife extends Weapon {
+    constructor(name) {
+        super(name);
+        this.attack = 5;
+        this.durability = 300;
+        this.currentDurability = this.durability;
+        this.range = 1;
+    }
+}
+
+class Longbow extends Bow {
+    constructor(name) {
+        super(name);
+        this.attack = 15;
+        this.range = 4;
+    }
+}
+
+class Axe extends Sword {
+    constructor(name) {
+        super(name);
+        this.attack = 27;
+        this.durability = 800;
+    }
+}
+
+class StormStaff extends Staff {
+    constructor(name) {
+        super(name);
+        this.attack = 10;
+        this.range = 3;
+    }
+}
