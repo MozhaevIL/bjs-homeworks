@@ -209,6 +209,7 @@ class Axe extends Sword {
         this.name = "Секира";
         this.attack = 27;
         this.initialDurability = 800;
+        this.durability = this.initialDurability;
     }
 }
 
