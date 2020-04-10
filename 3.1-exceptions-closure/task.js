@@ -44,6 +44,14 @@ function getTriangle(a,b,c) {
     try {
         return new Triangle(a,b,c);
     } catch (error) {
-        console.log("Ошибка! Неправильный треугольник");
-    }
+        const wrongTriangle = {
+            getArea() {
+                return "Ошибка! Неправильный треугольник!";
+            },
+            getPerimeter() {
+                return "Ошибка! Неправильный треугольник!";
+            }
+        }
+        return wrongTriangle; 
+        }
 }
