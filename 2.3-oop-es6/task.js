@@ -101,95 +101,33 @@ const stormStaff = new Weapon({
 
 //Задача 2
 
-class Weapon_2 {  //пришлось создать новый класс, т.к. класс Weapon принимает в качестве аргумента объект. Если это можно как-то обойти, буду рад
-     isBroken() {
-        if (this.durability > 0) {
-            return false;
-        } else {
-            return true;
+class Arm extends Weapon {
+    constructor() {
+        super(arm);
+    }
+}
+
+class Bow extends Weapon {
+    constructor() {
+        super(bow);
+    }
+}
+
+class Sword extends Weapon {
+    constructor() {
+        super(sword);
+    }
+}
+
+class Staff extends Weapon {
+    constructor() {
+        super(staff);
+    }
+}
+
+class Knife extends Weapon {
+    constructor() {
         }
-    }
-
-    takeDamage(damage) {
-        if (this.durability > damage) {
-            this.durability -= damage;
-            console.log(`Прочность оружия ${this.name} снижена на ${damage}. Новая прочность - ${this.durability}`);
-          
-        } else {
-            console.log(`Оружие ${this.name} сломалось, получив урон ${damage} при прочности ${this.durability}`);
-            this.durability = 0;
-        }
-      return this.durability;
-    }
-
-    getDamage() {
-        if (this.durability >= this.initialDurability * 0.3) {
-            console.log(`Оружие ${this.name} в превосходном состоянии наносит урон ${this.attack}`);
-            return this.attack;
-        } else if ((this.durability < this.initialDurability * 0.3) && (this.durability > 0)) {
-            console.log(`Оружие ${this.name} в плохом состоянии наносит урон ${this.attack / 2}`);
-            return this.attack / 2;
-        } else {
-            console.log(`Оружие ${this.name} сломано и не наносит урона`);
-            return 0;
-        }
-    }
-}
-
-
-class Arm extends Weapon_2 {
-    constructor() {
-        super();
-        this.name = "Рука";
-        this.attack = 1;
-        this.initialDurability = Infinity;
-        this.durability = this.initialDurability;
-        this.range = 1;
-    }
-}
-
-class Bow extends Weapon_2 {
-    constructor() {
-        super();
-        this.name = "Лук";
-        this.attack = 10;
-        this.initialDurability = 200;
-        this.durability = this.initialDurability;
-        this.range = 3;
-    }
-}
-
-class Sword extends Weapon_2 {
-    constructor() {
-        super();
-        this.name = "Меч";
-        this.attack = 25;
-        this.initialDurability = 500;
-        this.durability = this.initialDurability;
-        this.range = 1;
-    }
-}
-
-class Staff extends Weapon_2 {
-    constructor() {
-        super();
-        this.name = "Посох";
-        this.attack = 8;
-        this.initialDurability = 300;
-        this.durability = this.initialDurability;
-        this.range = 2;
-    }
-}
-
-class Knife extends Weapon_2 {
-    constructor() {
-        super();
-        this.name = "Нож";
-        this.attack = 5;
-        this.initialDurability = 300;
-        this.durability = this.initialDurability;
-        this.range = 1;
-    }
 }
 
 class LongBow extends Bow {
