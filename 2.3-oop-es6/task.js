@@ -127,6 +127,7 @@ class Staff extends Weapon {
 
 class Knife extends Weapon {
     constructor() {
+        super(knife);
         }
 }
 
