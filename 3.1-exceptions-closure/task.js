@@ -36,7 +36,7 @@ class Triangle {
     getArea() {
         let p = this.getPerimeter() / 2;
         let s = Math.sqrt(p * (p - this.a) * (p - this.b) * (p - this.c));
-        return s.toFixed(3);
+        return parseFloat(s.toFixed(3));
     }
 }
 
@@ -46,10 +46,10 @@ function getTriangle(a,b,c) {
     } catch (error) {
         const wrongTriangle = {
             getArea() {
-                return "Ошибка! Неправильный треугольник!";
+                return "Ошибка! Неправильный треугольник";
             },
             getPerimeter() {
-                return "Ошибка! Неправильный треугольник!";
+                return "Ошибка! Неправильный треугольник";
             }
         }
         return wrongTriangle; 
